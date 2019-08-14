@@ -26,7 +26,7 @@ class henchBotRefreeze:
                 is_pr = bool(mention['subject']['type'] == 'Pull Request')
                 if is_pr and self.asked_for_refreeze(mention['subject']['latest_comment_url']):
                     self.refreeze_deps(mention)
-            self.mark_as_read(mention['id']) 
+            	self.mark_as_read(mention['id']) 
 
     def asked_for_refreeze(self, comment_url):
         res = requests.get(comment_url).json()
