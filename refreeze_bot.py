@@ -75,7 +75,7 @@ class henchBotRefreeze:
 
     def run_refreeze_commands(self):
         os.chdir('repo2docker/buildpacks/conda')
-        subprocess.check_output([sys.executable, 'freeze.py'])
+        subprocess.check_output(['./freeze.py'])
         os.chdir('../../..')
 
 
