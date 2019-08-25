@@ -5,6 +5,7 @@ import os
 import shutil
 import time
 import datetime
+import sys
 
 REPO_API = 'https://api.github.com/repos/{}'
 NOTIFICATIONS_API = 'https://api.github.com/notifications'
@@ -74,7 +75,7 @@ class henchBotRefreeze:
 
     def run_refreeze_commands(self):
         os.chdir('repo2docker/buildpacks/conda')
-        subprocess.check_output(['./freeze.py'])
+        subprocess.check_output([sys.executable, 'freeze.py'])
         os.chdir('../../..')
 
 
