@@ -67,7 +67,9 @@ class henchBotRefreeze:
 
     def add_commit_push(self, pr_info):
         subprocess.check_output(['git', 'add', '-A'])
-        subprocess.check_output(['git', 'commit', '-m', 'made a change'])
+        subprocess.check_call(['git', 'config', 'user.name', 'henchbot'])
+        subprocess.check_call(['git', 'config', 'user.email', 'henchbot.github@gmail.com'])
+        subprocess.check_output(['git', 'commit', '-m', 'conda buildpack refreeze'])
         subprocess.check_output(['git', 'push', 'origin', pr_info['head']['ref']])
 
     def run_refreeze_commands(self):
